@@ -1,0 +1,17 @@
+{
+  "name": "voice-bgv-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Voice BGV — Express webhook server for Bolna agent events",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "create-agent": "node --env-file=.env create-agent.js",
+    "create-dispositions": "node --env-file=.env create-dispositions.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  }
+}
