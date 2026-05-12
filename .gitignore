@@ -7,3 +7,8 @@ build/
 .DS_Store
 *.log
 .vite/
+
+# Personal prep notes — not part of the public submission
+DEMO_SCRIPT.md
+DECK_OUTLINE.md
+DEPLOY.md
