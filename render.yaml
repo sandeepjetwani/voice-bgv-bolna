@@ -1,0 +1,32 @@
+# Render Blueprint — Voice BGV backend
+# https://render.com/docs/blueprint-spec
+#
+# Render auto-detects this file when you import the repo. It creates the
+# backend service and pre-fills most env vars. You'll need to set the secrets
+# (BOLNA_API_KEY, BOLNA_AGENT_ID) in the Render dashboard after import.
+
+services:
+  - type: web
+    name: voice-bgv-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: BOLNA_API_HOST
+        value: https://api.bolna.ai
+      - key: BOLNA_API_URL
+        value: https://api.bolna.ai/call
+      - key: BGV_COMPANY_NAME
+        value: Equal Identity
+      # Set these manually in the Render dashboard after the service is created:
+      - key: BOLNA_API_KEY
+        sync: false
+      - key: BOLNA_AGENT_ID
+        sync: false
+      - key: BACKEND_WEBHOOK_URL
+        sync: false
